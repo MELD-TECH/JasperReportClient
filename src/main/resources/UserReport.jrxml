@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="UserReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95231356-89fa-4146-9387-d726526fa8be">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="UserReportDB"/>
+	<parameter name="Location" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select * from test.user_info]]>
+	</queryString>
+	<field name="lastname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lastname"/>
+		<property name="com.jaspersoft.studio.field.label" value="lastname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="user_info"/>
+	</field>
+	<field name="firstname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="firstname"/>
+		<property name="com.jaspersoft.studio.field.label" value="firstname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="user_info"/>
+	</field>
+	<field name="gender" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="gender"/>
+		<property name="com.jaspersoft.studio.field.label" value="gender"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="user_info"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email"/>
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="user_info"/>
+	</field>
+	<group name="email">
+		<groupExpression><![CDATA[$F{email}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="1" width="280" height="29" uuid="77e22363-8f62-465a-a152-66f4b6b5a0a4"/>
+				<textElement>
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer User Report]]></text>
+			</staticText>
+			<line>
+				<reportElement x="140" y="40" width="240" height="1" uuid="3a2d5880-28e4-4ecd-94a9-8c116b045bb3">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="240" y="0" width="100" height="20" uuid="c49cf41d-7172-4322-bbf8-9a16707e9a7e"/>
+				<textFieldExpression><![CDATA[$P{Location}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="192" y="0" width="100" height="20" uuid="edb03384-e613-4673-bfc0-e8d7bcc0f41c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Station:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="40" width="100" height="30" uuid="f2439f8e-9d91-4903-acfe-e6a2c224791a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lastname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="40" width="100" height="30" uuid="dc67f0b1-03cf-44a1-bc29-dcba91ec9893"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firstname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="437" y="40" width="100" height="30" uuid="bce4d59f-0c04-4bcb-a3d1-86eba63f0a93"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<textField>
+				<reportElement x="17" y="9" width="100" height="30" uuid="9c0491d8-daf7-4b5e-80f5-22d1e6360235">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7e6df2e3-b473-49c4-b841-dd1dd2a7acdb"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{lastname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="10" width="100" height="30" uuid="f468e234-c80e-4103-a552-d45fba129d39">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="92591cf1-f2ed-4dfe-bdab-4730c023d9c5"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{firstname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="437" y="10" width="100" height="30" uuid="9e490053-0c3f-4757-ba51-e4faf408bf2b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6321da88-23f7-4c39-9471-59becb8510b9"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement x="320" y="27" width="100" height="30" uuid="5edf9367-d85d-491c-b874-f17350340c47"/>
+				<text><![CDATA[Total Pages]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="420" y="27" width="100" height="30" uuid="7e28d9e1-0338-4738-a09c-c97691cc3619"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
